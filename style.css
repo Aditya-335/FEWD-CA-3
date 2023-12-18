@@ -5,9 +5,12 @@
     box-sizing: border-box;
     font-family: 'Roboto';
 }
+body{
+    background-color: #BED754;
+}
 
 header nav{
-    background-color: orange;
+    background-color:#E3651D;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -47,7 +50,7 @@ form button[type="submit"]{
     cursor: pointer;
 }
 
-form button[type="submit"]:hover,.recipe button:hover{
+form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
     background-color: #5F0F40;
 }
 
@@ -63,15 +66,23 @@ form button[type="submit"]:hover,.recipe button:hover{
     place-items: center;
 }
 
+
 .recipe{
     background-color: #000;
     display: flex;
+    text-align: center;
+    justify-content: center;
     flex-direction: column;
     color: #fff;
     border-radius: 7px;
     box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
     cursor: pointer;
     max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover{
+    transform: scale(1.03);
 }
 .recipe img{
     height: 300px;
@@ -98,6 +109,11 @@ form button[type="submit"]:hover,.recipe button:hover{
     background-color:#9A031E;
     color: #fff;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .recipe-details{
     display: none;
@@ -105,24 +121,147 @@ form button[type="submit"]:hover,.recipe button:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: grey;
+    background-color: #E3651D;
     border-radius: 12px;
     width: 40%;
     height: 60%;
+    color: #fff;
     font-size: 20px;
     transition: all 0.5s ease-in-out;
     overflow-y: scroll;
+    border: 5px solid black;
 
 }
+.logo{
+    display: flex;
+    justify-content: start;
+}
 
+.recipe-closeBtn{
+    border: none;
+    background-color: #9A031E;
+    color:#fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-@media screen and(max-width:600px) {
-    header nav{
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.ingredientList li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+
+.recipe-content{
+    padding: 30px;
+    margin-left: 22px;
+}
+
+.recipe-details::-webkit-scrollbar{
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb{
+    background-color: darkgray;
+    border-radius: 15px;
+    --webkit-border-radius:15px;
+}
+
+body::-webkit-scrollbar{
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:darkgrey;
+    border-radius: 15px;
+    --webkit-border-radius:15px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #ebebeb;
+}
+
+/* Your existing CSS styles... */
+
+@media screen and (max-width: 600px) {
+    header nav {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    header nav form{
-        width: 80%;
-        margin-top: 20px;
+
+    header nav form {
+        width: 100%;
+        margin-top: 10px;
     }
-    
+
+    form input[type="text"],
+    form button[type="submit"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .recipe-container {
+        width: 90%;
+        margin: 10px auto;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .recipe {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .recipe img {
+        height: auto;
+        width: 100%;
+    }
+
+    .recipe h3 {
+        font-size: 20px;
+    }
+
+    .recipe p {
+        font-size: 16px;
+    }
+
+    .recipe button {
+        margin: 10px auto;
+    }
+
+    .recipe-details {
+        width: 90%;
+        height: 70%;
+        font-size: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .recipeCloseBtn {
+        top: 10px;
+        right: 10px;
+    }
+
+    .recipe-content {
+        padding: 15px;
+    }
 }

@@ -1,12 +1,17 @@
 const searchBox = document.querySelector('.searchBox');
 const searchBtn = document.querySelector('.searchBtn');
 const recipeContent = document.querySelector('.recipe-content');
+const popularMealSection = document.getElementById('random-meal');
 const recipeContainer = document.querySelector('.recipe-container');
 const recipeCloseBtn = document.querySelector('.recipe-closeBtn');
 
+window.addEventListener('load', () =>{
+    fetchRecipeRandomData();
+});
 
 const fetchRecipes = async (query)=>{
     recipeContainer.innerHTML = "<h2>Fetching Recipes...</h2>";
+try{
     const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const response = await data.json();
     
@@ -31,6 +36,41 @@ const fetchRecipes = async (query)=>{
         recipeContainer.appendChild(recipeDiv);
     });
 }
+catch(error){
+    recipeContainer.innerHTML = "<h2>Error in Fetching Recipes...</h2>";
+}
+}
+
+const fetchRecipeRandomData = async () => {
+    try {
+        const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+        const data = await res.json();
+        renderRandomRecipes(data.meals[0]);
+    } catch (error) {
+        console.error('Error in Fetching Recipes:', error);
+    }
+};
+
+const renderRandomRecipes = (meal) => {
+    popularMealSection.innerHTML = '';
+    const randomMeal = document.createElement('div');
+    randomMeal.className = 'recipe';
+    popularMealSection.className = 'container'
+    randomMeal.innerHTML = `
+    <img src ="${meal.strMealThumb}">
+    <h3>${meal.strMeal}</h3>
+    <p><span>${meal.strArea}</span> Dish</p>
+    <p>Belongs to <span>${meal.strCategory}</span> Category</p>
+    `;
+    const button = document.createElement('button');
+        button.textContent = "View Recipe";
+        randomMeal.appendChild(button);
+
+        button.addEventListener("click", ()=>{
+            openRecipeBox(meal);
+        });
+    popularMealSection.appendChild(randomMeal);
+};
 
 const getIngredients = (meal) =>{
     let ingredientsList = "";
@@ -63,4 +103,5 @@ searchBtn.addEventListener("click",(e)=>{
     e.preventDefault();
     const searchInput = searchBox.value.trim();
     fetchRecipes(searchInput);
+    
 })
