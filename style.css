@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Poppins';
 }
 body{
     background-color: #38419D;
@@ -62,8 +62,14 @@ form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
     gap: 40px;
     width: 80%;
     margin: 10px auto;
+    color: #fff;
     padding: 20px;
     place-items: center;
+}
+.random{
+    display: flex;
+    justify-content: center;
+    color: #fff;
 }
 
 
@@ -110,6 +116,7 @@ form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
     color: #fff;
 }
 .container{
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,6 +230,10 @@ body::-webkit-scrollbar-track{
         margin: 10px auto;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
+    }
+    .container{
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 
     .recipe {
