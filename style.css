@@ -6,11 +6,11 @@
     font-family: 'Roboto';
 }
 body{
-    background-color: #BED754;
+    background-color: #38419D;
 }
 
 header nav{
-    background-color:#E3651D;
+    background-color:#4CB9E7;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@ form input[type="text"],button[type="submit"]{
 }
 
 form button[type="submit"]{
-    background-color: #9A031E;
+    background-color: #52D3D8;
     color:#fff;
     cursor: pointer;
 }
@@ -68,12 +68,12 @@ form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
 
 
 .recipe{
-    background-color: #000;
+    background-color: #200E3A;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    color: #fff;
+    color: #FFECD6;
     border-radius: 7px;
     box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
     cursor: pointer;
@@ -106,7 +106,7 @@ form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
     cursor: pointer;
     margin: 18px auto;
     border: none;
-    background-color:#9A031E;
+    background-color:#52D3D8;
     color: #fff;
 }
 .container{
@@ -121,11 +121,11 @@ form button[type="submit"]:hover,.recipe button:hover,.recipe-closeBtn:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #E3651D;
+    background-color: #4CB9E7;
     border-radius: 12px;
     width: 40%;
     height: 60%;
-    color: #fff;
+    color: #FFECD6;
     font-size: 20px;
     transition: all 0.5s ease-in-out;
     overflow-y: scroll;
