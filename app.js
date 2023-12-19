@@ -12,7 +12,7 @@ window.addEventListener('load', () =>{
 const fetchRecipes = async (query)=>{
     recipeContainer.innerHTML = "<h2>Fetching Recipes...</h2>";
 try{
-    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${query}`);
     const response = await data.json();
     
     recipeContainer.innerHTML = "";
@@ -21,17 +21,8 @@ try{
         recipeDiv.classList.add('recipe');
         recipeDiv.innerHTML = `<img src ="${meal.strMealThumb}">
             <h3>${meal.strMeal}</h3>
-            <p><span>${meal.strArea}</span> Dish</p>
-            <p>Belongs to <span>${meal.strCategory}</span> Category</p>
+            
             `
-
-        const button = document.createElement('button');
-        button.textContent = "View Recipe";
-        recipeDiv.appendChild(button);
-
-        button.addEventListener("click", ()=>{
-            openRecipeBox(meal);
-        });
         
         recipeContainer.appendChild(recipeDiv);
     });
