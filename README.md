@@ -14,6 +14,10 @@ Github link-
 
 https://github.com/Kalvian2/FEWD-CA-3
 
+Video link-
+
+https://www.loom.com/share/6783f5324fc14fd99432d1d6569c09f1?sid=22f24edf-acd5-4ed7-97e5-b9d55f702791
+
 # Website Description-
 
 Tasty Treats is a food website which uses API to fetch and display random recipes to the user alongwith there ingredients. It also has a search bar where the user can search for any dish by the category of the dish.
