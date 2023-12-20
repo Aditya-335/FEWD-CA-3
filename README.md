@@ -18,6 +18,12 @@ https://github.com/Kalvian2/FEWD-CA-3
 
 Tasty Treats is a food website which uses API to fetch and display random recipes to the user alongwith there ingredients. It also has a search bar where the user can search for any dish by the category of the dish.
 
+# References-
+https://www.flaticon.com/
+
+https://www.pexels.com/
+
+https://www.themealdb.com/api.php
 
 # Screenshots-
 
